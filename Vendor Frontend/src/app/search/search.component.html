@@ -1,0 +1,60 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+<body>
+<app-navbar></app-navbar>
+  <div class="container">
+    <div class="search-container">
+      <div class="col-25">
+        <label for="vendorname">Vendor Name: </label>
+        <input type="text" id="myInput" (click)="myFunction()" placeholder="Search for vendor names.." title="Type in a name">
+        <!-- <button type="submit">Search</button> -->
+      </div>
+      </div>
+        <h3>Search Result</h3>
+        <table id="myTable">
+          <tr class="header">
+            <th >Username</th>
+            <th >Vendor Name </th>
+            <th>Sales Rating</th>
+          </tr>
+          <tr>
+            <td>Peter</td>
+            <td>Tata</td>
+            <td>4.2</td>
+          </tr>
+          <tr>
+            <td>Lois</td>
+            <td>Apple</td>
+            <td>3.5</td>
+          </tr>
+          <tr>
+            <td>Joe</td>
+            <td>Swiss</td>
+            <td>3.8</td>
+          </tr>
+          <tr>
+            <td>Cleveland</td>
+            <td>Bata</td>
+            <td>2.5</td>
+          </tr>
+        </table>  
+         
+        <h3>Search Result for 3rd top Vendor</h3>
+        <table>
+          <tr>
+            <th>Username</th>
+            <th>Vendor Name </th>
+            <th>Sales Rating</th>
+          </tr>
+          <tr>
+            <td>Joe</td>
+            <td>Swiss</td>
+            <td>3.0</td>
+          </tr>
+        </table>  
+    
+    </div>
+  </body>

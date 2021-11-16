@@ -1,0 +1,137 @@
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+input[type=text], select, textarea, input[type=password] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: rgb(22, 67, 158);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+input[type=submit]:hover {
+  background-color: #0c31d8;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h2{
+    text-align: center;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, input[type=submit],input[type=password] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+<script>
+  // function validation(){
+  //   var username=document.getElementById("name").value;///get id with value 
+    
+    
+  var myInput = document.getElementById("psw");
+  var username=document.getElementById("name")
+  // When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  
+  
+  
+}
+</script>
+</head>
+<body>
+
+<h2>Login to the System</h2>
+
+<div class="container">
+  <form action="/dashboard">
+  <div class="row">
+    <div class="col-25">
+      <label for="uname">Username</label>
+    </div>
+    <div class="col-75">
+      <input type="text"id="name" placeholder="Enter Username" minlength="5" maxlength="8" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="password">Password</label>
+    </div>
+    <div class="col-75">
+      <input type="password" id="password" id="psw" name="psw" placeholder="Enter Password" minlength="8" maxlength="14" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Login" (click)="login()">
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
